@@ -1,4 +1,4 @@
-# DAM1 
+# GitNiel 
 **Ver estado:**  `git status`  
 **Bajar cambios:**  `git pull`  
 **Marcar archivos:**  `git add .`  
