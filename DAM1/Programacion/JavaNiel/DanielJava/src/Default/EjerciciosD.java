@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.Closeable;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.lang.reflect.Array;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -2589,6 +2590,32 @@ public class MainFicherosPorPosicion {
 				else
 					return -1;
 			}
+		*/
+		
+		/*
+		/// Obtener el directorio actual
+		File directorioActual = new File(".");
+		System.out.println(directorioActual.getAbsolutePath());
+		
+		File dirConfg = new File(DIR_CONFG);
+		
+		///Comprobar si el directorio existe y crea el directorio
+		if(dirConfg.exists())
+			System.out.println("El directorio " + dirConfg + " existe.");
+		else {
+			System.out.println("El directorio " + dirConfg + " no existe.");
+			//dirConfg.mkdir();		//No puede crear más de 1 directorio a la vez
+			dirConfg.mkdirs();		//Puede crear más de 1 direcctorio a la vez
+		}
+		
+		try {
+			/// Crear un fichero si no existe
+			FileWriter fichero = new FileWriter(new File(DIR_CONFG + File.separator + "fichero.txt"));
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
 		*/
 		
 		
