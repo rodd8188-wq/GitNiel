@@ -11,9 +11,9 @@ public class Main {
 	
 	public static void main (String[] args) {
 		
-		clase1();
+		//clase1();
 		
-		
+		clase2();
 		
 		
 	}
@@ -61,6 +61,16 @@ public class Main {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-	}
+	}	//clase1
 	
-}
+	public static void clase2() {
+		
+		
+		
+	}	//clase2
+	
+	
+	
+	
+	
+}	//fin main

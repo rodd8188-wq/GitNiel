@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<agenda>
+	<contacto>
+		<nombre>Daniel</nombre>
+		<telefono>657356022</telefono>
+	</contacto>
+	<contacto>
+		<nombre>Niki</nombre>
+		<telefono>678603454</telefono>
+	</contacto>
+</agenda>

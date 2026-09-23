@@ -2618,6 +2618,24 @@ public class MainFicherosPorPosicion {
 		
 		*/
 		
+		/*
+		 * Ficheros
+		 * 		
+		 * 		Texto
+		 * 			Lectura: FileReader, BufferedReader
+		 * 			
+		 * 			Escritura: FileWriter, BufferedWriter, PrintWriter
+		 * 
+		 * 		Binario
+		 * 			Lectura: DataInputStream, FileInputStream, ObjectInputStream
+		 * 
+		 * 			Escritura: DataOutputStream, FileOutputStream, ObjectOutputStream
+		 * 
+		 * 		Binario (Random Access)
+		 * 			Lectura y escritura: RandomAccessFile
+		 */
+		
+		
 		
 	} // Cierre del main
 }	// Cierre de la clase
