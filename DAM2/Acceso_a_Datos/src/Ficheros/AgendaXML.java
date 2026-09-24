@@ -82,8 +82,8 @@ public class AgendaXML {
 				Transformer transformer = transformerFactor.newTransformer();
 				transformer.setOutputProperty(OutputKeys.INDENT, "yes");
 				transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
-				DOMSource source = new DOMSource(doc);						//Cambios
-				StreamResult result = new StreamResult(fichero);			//Cambios
+				DOMSource source = new DOMSource(doc);						//Personalizable
+				StreamResult result = new StreamResult(fichero);			//Personalizable
 				transformer.transform(source, result);
 				
 			}
