@@ -10,10 +10,10 @@ public class EjecucionOrdenDocumental {
 
     public SolicitudDTO tramitar(OrdenDTO ordenDTO) {
         SolicitudDTO solicitudDTO;
-        
+
         solicitudDTO = new SolicitudDTO(List.of(new Talon()));
 
         return solicitudDTO;
     }
-
+    
 }
