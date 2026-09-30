@@ -1,8 +1,13 @@
 package Default;
 
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.Reader;
 import java.nio.file.Path;
+import java.util.List;
+
+import com.google.gson.Gson;
 
 public class Main {
 
@@ -13,7 +18,9 @@ public class Main {
 		
 		//clase1();
 		
-		clase2();
+		//clase2();
+		
+		json();
 		
 		
 	}
@@ -27,7 +34,7 @@ public class Main {
 			
 			File dirConfg = new File(DIR_CONFG);
 			
-			boolean crearFichero = true;
+			boolean crearFichero = true;																
 			
 			///Comprobar si el directorio existe y crea el directorio
 			if(dirConfg.exists())
@@ -68,6 +75,33 @@ public class Main {
 		
 		
 	}	//clase2
+	
+	public static void json() {
+		
+		final String ruta = "Documentos/agenda.json";
+		
+		leerAgenda(ruta);
+		
+	}	//leerJSON
+	
+	public static void leerAgenda(String ruta) {
+		
+		try(Reader lector = new FileReader(ruta)){
+			
+			Gson gson = new Gson();
+			AgendaJSON agenda = gson.fromJson(lector, AgendaJSON.class);
+			List<ContactoJSON> contactos = agenda.getContactos();
+			
+			for(ContactoJSON c: contactos) {
+				c.mostrar();
+				System.out.println();
+			}
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+	}	//leerAgenda
 	
 	
 	
