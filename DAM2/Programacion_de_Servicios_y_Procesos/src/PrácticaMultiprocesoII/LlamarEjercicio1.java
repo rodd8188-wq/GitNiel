@@ -14,6 +14,8 @@ public class LlamarEjercicio1 {
         Process proceso = pb.start();
         int salida = proceso.waitFor();
         
+        int salidaSim = pb.start().waitFor();
+        
         if (salida == -1) {
             System.out.println("No has escrito nada");
         } else if (salida == -2) {

@@ -103,7 +103,7 @@ public class Main {
 		}
 		
 	}	//leerAgenda
-	
+	/*
 	public static void guardarAgenda(List<ContactoJSON> contactos, String ruta) {
 		AgendaJSON agenda = new AgendaJSON();
 		agenda.setContactos(contactos);
@@ -113,10 +113,11 @@ public class Main {
 		}
 		
 	}	//guardarAgenda
+	*/
 	
 	public static void crearContacto(ContactoJSON nuevo, String ruta) {
 		
-		List<ContactoJSON> contactos = cargarListaContactos(ruta);
+		//List<ContactoJSON> contactos = cargarListaContactos(ruta);
 		
 		
 	}	//crearContacto
