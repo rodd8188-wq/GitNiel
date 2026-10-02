@@ -8,6 +8,7 @@ import java.nio.file.Path;
 import java.util.List;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 public class Main {
 
@@ -103,6 +104,22 @@ public class Main {
 		
 	}	//leerAgenda
 	
+	public static void guardarAgenda(List<ContactoJSON> contactos, String ruta) {
+		AgendaJSON agenda = new AgendaJSON();
+		agenda.setContactos(contactos);
+		try(Writer escritor = new FileWriter(ruta)){
+			Gson gson = new GsonBuilder().setPrettyPrinting().create();
+			gson.toJson();
+		}
+		
+	}	//guardarAgenda
+	
+	public static void crearContacto(ContactoJSON nuevo, String ruta) {
+		
+		List<ContactoJSON> contactos = cargarListaContactos(ruta);
+		
+		
+	}	//crearContacto
 	
 	
 	

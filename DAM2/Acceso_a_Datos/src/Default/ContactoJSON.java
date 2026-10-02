@@ -1,5 +1,7 @@
 package Default;
 
+import java.util.List;
+
 public class ContactoJSON {
 	
 	private String nombre, telefono, dni;
