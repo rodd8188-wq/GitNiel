@@ -7,5 +7,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="/home/alumno/gitNiel/GitNiel/DAM2/Acceso_a_Datos/gson-2.14.0.jar"/>
+	<classpathentry kind="lib" path="/home/alumno/gitNiel/GitNiel/DAM2/Acceso_a_Datos/mysql-connector-j-26.7.0/mysql-connector-j-26.7.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
