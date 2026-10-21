@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lights Out</string>
+    <string name="reset">Reiniciar</string>
+    <string name="new_game">Nueva partida</string>
+    <string name="close">Cerrar</string>
+    <string name="moves_fmt">Movimientos: %1$d</string>
+    <string name="time_fmt">Tiempo: %1$02d:%2$02d</string>
+    <string name="win_title">¡Has ganado!</string>
+    <string name="win_msg">Resuelto en %1$d movimientos y %2$02d:%3$02d.</string>
+</resources>
