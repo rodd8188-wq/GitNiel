@@ -8,5 +8,8 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="/home/alumno/gitNiel/GitNiel/DAM2/Acceso_a_Datos/gson-2.14.0.jar"/>
 	<classpathentry kind="lib" path="/home/alumno/gitNiel/GitNiel/DAM2/Acceso_a_Datos/mysql-connector-j-26.7.0/mysql-connector-j-26.7.0.jar"/>
+	<classpathentry kind="lib" path="/home/alumno/gitNiel/GitNiel/DAM2/Acceso_a_Datos/commons-dbcp2-2.14.0.jar"/>
+	<classpathentry kind="lib" path="/home/alumno/gitNiel/GitNiel/DAM2/Acceso_a_Datos/commons-logging-1.4.0.jar"/>
+	<classpathentry kind="lib" path="/home/alumno/gitNiel/GitNiel/DAM2/Acceso_a_Datos/commons-pool2-2.13.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
