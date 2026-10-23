@@ -39,7 +39,7 @@ public static void main(String[] args) {
 				
 			}
 			
-			
+			sc.close();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

@@ -2,31 +2,32 @@ package PracticaMultiprocesoII;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Scanner;
 
 public class Ejercicio2Hijo {
 
-	public static void main(String[] args) {
-		InputStreamReader in = new InputStreamReader(System.in);
-		
-		Scanner sc = new Scanner(System.in);
-		int sumita = 0;
+    public static void main(String[] args) throws Exception {
+    	
+    	//Crea un lector que lee desde la entrada estandar, el padre envia los datos desde esa entrada
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        
+        double suma = 0;
+        String linea;
+        
+        //Recorre la entrada y la guarda en "linea" mientras que la entrada no este vacia
+        while ((linea = br.readLine()) != null) {
 
-		try {
-			while (sc.hasNext()) {
-				String linea = sc.nextLine();
-				if (!linea.equals("*")) {
-					int numero = Integer.parseInt(linea);
-					sumita += numero;
+            if (linea.equals("*")) {
+                break;
+            }
 
-					System.out.printf("Escrito %s", numero);
-				}
-			}
-
-			System.out.println("Suma: " + sumita);
-		} catch (Exception e) {
-			System.exit(-1);
-		}
-
-	}// main
-}// class
+            try {
+                suma += Integer.parseInt(linea);
+            } catch (NumberFormatException e) {
+                System.exit(-1);
+            }
+        }
+        
+        System.out.println(suma);
+        System.exit(0);
+    }
+}
