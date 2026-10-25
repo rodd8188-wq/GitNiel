@@ -1,0 +1,5 @@
+apellido, nombre, fecha_nacimiento, email
+García, Lucía, 1995/03/14, lucia@example.com
+López, Marcos, 1990/10/25, marcos@example.com
+Pérez, Ana, 2000/12/02, ana@example.com
+Ruiz, Pablo, 1988/10/25, pablo@example.com
