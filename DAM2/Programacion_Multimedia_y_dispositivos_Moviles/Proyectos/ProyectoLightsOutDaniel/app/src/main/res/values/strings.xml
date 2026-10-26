@@ -8,4 +8,5 @@
     <string name="time_fmt">Tiempo: %1$02d:%2$02d</string>
     <string name="win_title">¡Has ganado!</string>
     <string name="win_msg">Resuelto en %1$d movimientos y %2$02d:%3$02d.</string>
+    <string name="blanck"> </string>
 </resources>
