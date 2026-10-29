@@ -1,0 +1,16 @@
+{
+  "ucm": [
+    {"titulo": "Iron Man", "anio": 2008, "fase": 1, "director": "Jon Favreau"},
+    {"titulo": "The Incredible Hulk", "anio": 2008, "fase": 1, "director": "Louis Leterrier"},
+    {"titulo": "Iron Man 2", "anio": 2010, "fase": 1, "director": "Jon Favreau"},
+    {"titulo": "Thor", "anio": 2011, "fase": 1, "director": "Kenneth Branagh"},
+    {"titulo": "Captain America: The First Avenger", "anio": 2011, "fase": 1, "director": "Joe Johnston"},
+    {"titulo": "The Avengers", "anio": 2012, "fase": 1, "director": "Joss Whedon"},
+    {"titulo": "Iron Man 3", "anio": 2013, "fase": 2, "director": "Shane Black"},
+    {"titulo": "Thor: The Dark World", "anio": 2013, "fase": 2, "director": "Alan Taylor"},
+    {"titulo": "Captain America: The Winter Soldier", "anio": 2014, "fase": 2, "director": "Anthony y Joe Russo"},
+    {"titulo": "Guardians of the Galaxy", "anio": 2014, "fase": 2, "director": "James Gunn"},
+    {"titulo": "Avengers: Age of Ultron", "anio": 2015, "fase": 2, "director": "Joss Whedon"},
+    {"titulo": "Ant-Man", "anio": 2015, "fase": 2, "director": "Peyton Reed"}
+  ]
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pokedex>
+    <pokemon id="25" nivel="35">
+        <nombre>Pikachu</nombre>
+        <tipo>electrico</tipo>
+    </pokemon>
+    <pokemon id="6" nivel="50">
+        <nombre>Charizard</nombre>
+        <tipo>fuego</tipo>
+        <tipo>volador</tipo>
+    </pokemon>
+    <pokemon id="7" nivel="12">
+        <nombre>Squirtle</nombre>
+        <tipo>agua</tipo>
+    </pokemon>
+    <pokemon id="1" nivel="18">
+        <nombre>Bulbasaur</nombre>
+        <tipo>planta</tipo>
+        <tipo>veneno</tipo>
+    </pokemon>
+</pokedex>
