@@ -15,6 +15,8 @@ import java.util.Arrays;
 
 public class Main {
 	
+	///De archivo de texto a XML
+	
 	public static void main(String[] args) {
         String entrada = "C:\\\\Users\\\\rumbl\\\\GitNiel\\\\GitNiel\\\\DAM2\\\\Acceso_a_Datos\\\\Boletin2AAD-XML_Y_JSON\\\\Ficheros\\\\pokemons.txt";   // archivo de origen
         String salida = "C:\\\\Users\\\\rumbl\\\\GitNiel\\\\GitNiel\\\\DAM2\\\\Acceso_a_Datos\\\\Boletin2AAD-XML_Y_JSON\\\\Ficheros\\\\pokemons.xml";    // archivo XML que vamos a generar

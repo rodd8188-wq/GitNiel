@@ -13,6 +13,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Main {
+	
+	///De archivo de texto a json
 
 	// referencia (sin espacios) + descripción (cualquier texto) + stock (número final)
     private static final Pattern PATRON =
@@ -47,7 +49,7 @@ public class Main {
             System.err.println("Error leyendo el archivo: " + e.getMessage());
             return;
         }
-
+        
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String json = gson.toJson(articulos);
 

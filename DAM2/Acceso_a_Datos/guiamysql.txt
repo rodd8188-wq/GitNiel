@@ -1,0 +1,9 @@
+# Copiar archivo dentro del docker
+docker start mysql
+docker cp archivobbdd.sql mysql:/root
+
+# Iniciar bbdd
+docker exec -it mysql bash
+cd root
+mysql -u root -p < archivobbdd.sql
+

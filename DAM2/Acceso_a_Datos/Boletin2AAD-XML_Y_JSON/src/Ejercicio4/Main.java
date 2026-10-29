@@ -25,7 +25,7 @@ import org.w3c.dom.NodeList;
 
 public class Main {
 	
-	 private static final String ARCHIVO_XML = "C:\\Users\\rumbl\\GitNiel\\GitNiel\\DAM2\\Acceso_a_Datos\\Boletin2AAD-XML_Y_JSON\\Ficheros\\pokemons.txt";
+	 private static final String ARCHIVO_XML = "C:\\Users\\rumbl\\GitNiel\\GitNiel\\DAM2\\Acceso_a_Datos\\Boletin2AAD-XML_Y_JSON\\Ficheros\\pokemons.xml";
 	 private static final String ARCHIVO_JSON = "C:\\Users\\rumbl\\GitNiel\\GitNiel\\DAM2\\Acceso_a_Datos\\Boletin2AAD-XML_Y_JSON\\Ficheros\\pokemons.json";
 
 	public static void main(String[] args) {

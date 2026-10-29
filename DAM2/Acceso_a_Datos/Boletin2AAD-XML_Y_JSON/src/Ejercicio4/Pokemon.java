@@ -17,9 +17,19 @@ public class Pokemon {
      this.tipo = tipo;
  }
 
- public int getCodigo() { return codigo; }
- public String getNombre() { return nombre; }
- public double getPeso() { return peso; }
- public double getAltura() { return altura; }
- public String getTipo() { return tipo; }
+ public int getCodigo() {
+	 return codigo;
+ }
+ public String getNombre() {
+	 return nombre;
+ }
+ public double getPeso() {
+	 return peso;
+ }
+ public double getAltura() {
+	 return altura;
+ }
+ public String getTipo() {
+	 return tipo;
+ }
 }
