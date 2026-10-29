@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<pokemons>
+    <pokemon>
+        <codigo>152</codigo>
+        <nombre>Chikorita</nombre>
+        <peso>6.4</peso>
+        <altura>0.9</altura>
+        <tipo>Planta</tipo>
+    </pokemon>
+    <pokemon>
+        <codigo>158</codigo>
+        <nombre>Totodile</nombre>
+        <peso>9.5</peso>
+        <altura>0.6</altura>
+        <tipo>Agua</tipo>
+    </pokemon>
+    <pokemon>
+        <codigo>163</codigo>
+        <nombre>Hoothoot</nombre>
+        <peso>21.2</peso>
+        <altura>0.7</altura>
+        <tipo>Normal, Volador</tipo>
+    </pokemon>
+    <pokemon>
+        <codigo>155</codigo>
+        <nombre>Cyndaquil</nombre>
+        <peso>7.9</peso>
+        <altura>0.5</altura>
+        <tipo>Fuego</tipo>
+    </pokemon>
+    <pokemon>
+        <codigo>167</codigo>
+        <nombre>Spinarak</nombre>
+        <peso>8.5</peso>
+        <altura>0.5</altura>
+        <tipo>Bicho, Veneno</tipo>
+    </pokemon>
+</pokemons>
