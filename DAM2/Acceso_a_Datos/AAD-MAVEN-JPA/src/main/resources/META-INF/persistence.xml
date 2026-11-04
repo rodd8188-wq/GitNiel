@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_2.xsd"
+	version="3.2">
+	<persistence-unit name="clasePU">
+		<class>com.jpa.EmpresaNiel.Producto</class>
+		<properties>
+			<property name="jakarta.persistence.jdbc.url"
+				value="jdbc:mysql://localhost:3306/dam2jpa
+				?createDatabaseIfNotExist=true" />
+			<!-- EN CASO DE USAR MARIADB EN LUGAR DE MYSQL
+			<property name="jakarta.persistence.jdbc.url"
+				value="jdbc:mariadb://localhost:3306/nombrebase?createDatabaseIfNotExist=true"/>
+			-->	
+			<property name="jakarta.persistence.jdbc.user" value="profe" />
+			<property name="jakarta.persistence.jdbc.password" value="abc123" />
+			<!-- Crea/actualiza las tablas a partir de las entidades -->
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<!-- Muestra el SQL que genera Hibernate -->
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+		</properties>
+	</persistence-unit>
+</persistence>
