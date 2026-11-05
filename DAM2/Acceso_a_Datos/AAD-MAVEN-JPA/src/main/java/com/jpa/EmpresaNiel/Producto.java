@@ -52,6 +52,7 @@ public class Producto {
 	
 	@Override
 	public String toString() {
-		return "(" + id + ")" + " - " + "Nombre: " + nombre + " | Precio: " + precio;
+		//return "(" + id + ")" + " - " + "Nombre: " + nombre + " | Precio: " + this.getPrecio();
+		return String.format("(%d) - Nombre: %-20s | Precio: %-10.2f", id, nombre, precio);
 	}
 }
