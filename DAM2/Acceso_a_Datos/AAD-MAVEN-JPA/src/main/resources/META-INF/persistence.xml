@@ -18,8 +18,8 @@
 			<!-- Crea/actualiza las tablas a partir de las entidades -->
 			<property name="hibernate.hbm2ddl.auto" value="update" />
 			<!-- Muestra el SQL que genera Hibernate -->
-			<property name="hibernate.show_sql" value="true" />
-			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.format_sql" value="false" />
 		</properties>
 	</persistence-unit>
 </persistence>

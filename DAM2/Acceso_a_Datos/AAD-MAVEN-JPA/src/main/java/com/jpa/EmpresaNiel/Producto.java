@@ -15,10 +15,10 @@ public class Producto {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)			//Hace que sea un campo autoincremental
 	private Long id;
 	
-	// @Column(name = "producto", length = 100, nullable = false, unique = true)
+	@Column(name = "producto", length = 100, nullable = false, unique = true)
 	private String nombre;			//Por defecto es un VARCHAR(255)
 	
-	// @Column(nullable = false)
+	@Column(nullable = false)
 	private double precio;
 	
 	// JPA exige siempre un constructor sin argumentos
@@ -48,5 +48,10 @@ public class Producto {
 		
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+	
+	@Override
+	public String toString() {
+		return "(" + id + ")" + " - " + "Nombre: " + nombre + " | Precio: " + precio;
 	}
 }
