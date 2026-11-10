@@ -4,7 +4,7 @@ public class Ejercicio1Hijo {
 	
 	public static void main(String[] args) {
 		
-		if (args.length == 0 || args[0].isEmpty()) {
+		if (args[0].isEmpty()) {
             System.exit(-1);
         } else {
         	

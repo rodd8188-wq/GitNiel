@@ -49,5 +49,7 @@ public class Ejercicio2Padre {
     	if(proceso.waitFor() != 0)
     		System.out.println("Se ha introducido una cadena");
     	
+    	isr.close();
+        br.close();
     }
 }

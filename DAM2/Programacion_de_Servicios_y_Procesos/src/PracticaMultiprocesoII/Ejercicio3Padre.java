@@ -33,7 +33,7 @@ public class Ejercicio3Padre {
 	        System.out.println("Valor de Salida: " + salida);
 	        
 	        //Si devuelve 0 es palindromo, si es -1 no lo es
-	        if(palindromo == 0)
+	        if(salida == 0)
 	        	System.out.println("Es palíndromo");
 	        else
 	        	System.out.println("NO es palíndromo");
