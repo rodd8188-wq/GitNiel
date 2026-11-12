@@ -47,7 +47,7 @@
 				<groupId>org.hibernate.tool</groupId>
 				<artifactId>hibernate-tools-maven</artifactId>
 				<version>6.5.2.Final</version>
-				<!-- Bloque para automatizar -->
+				<!-- Bloque para automatizar 
 				<executions>
 					<execution>
 						<id>generate-entities</id>
@@ -57,6 +57,7 @@
 						</goals>
 					</execution>
 				</executions>
+				-->
 				<configuration>
 					<!-- En este directorio se dejaran las clases que se generen -->
 					<outputDirectory>${project.basedir}/src/main/java</outputDirectory>
