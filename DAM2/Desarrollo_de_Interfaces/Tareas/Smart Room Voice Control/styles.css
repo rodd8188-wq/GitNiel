@@ -1,0 +1,26 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; background: #eef2f7; color: #172033; }
+.app { width: min(1000px, 94%); margin: 24px auto; }
+header { text-align: center; }
+.status-panel, .manual-test, .commands, .info-grid article { background: white; border-radius: 12px; padding: 16px; margin: 14px 0; box-shadow: 0 3px 12px #0001; }
+.status-panel { display: flex; gap: 10px; align-items: center; justify-content: center; flex-wrap: wrap; }
+button { padding: 10px 15px; border: 0; border-radius: 8px; cursor: pointer; }
+input { padding: 10px; border: 1px solid #bbb; border-radius: 8px; min-width: 260px; }
+.badge { padding: 8px 12px; border-radius: 999px; font-weight: bold; }
+.badge.stopped { background: #eee; }
+.badge.listening { background: #d8f6dc; }
+.room { position: relative; height: 360px; border-radius: 18px; overflow: hidden; background: #dce8f3; border: 6px solid #a8b7c7; transition: .3s; }
+.room.light-on { background: #fff3b8; }
+.room.night { background: #182033; color: white; }
+.window { position: absolute; width: 180px; height: 140px; left: 70px; top: 60px; background: #9bd4ff; border: 10px solid #fff; overflow: hidden; }
+.blind { position: absolute; inset: 0; background: repeating-linear-gradient(#777 0 12px, #999 12px 18px); transition: .5s; }
+.blind.open { transform: translateY(-125px); }
+.blind.closed { transform: translateY(0); }
+.lamp { position: absolute; right: 120px; top: 70px; font-size: 70px; filter: grayscale(1); }
+.room.light-on .lamp { filter: none; text-shadow: 0 0 22px #ffd54a; }
+.thermostat { position: absolute; right: 70px; bottom: 60px; background: white; color: #172033; padding: 18px; border-radius: 12px; font-size: 28px; font-weight: bold; }
+.sofa { position: absolute; left: 320px; bottom: 45px; width: 260px; height: 90px; background: #5e7aa5; color: white; border-radius: 25px 25px 10px 10px; display:flex; align-items:center; justify-content:center; font-weight:bold; }
+.info-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.info-grid article { margin:0; }
+.error { color:#b00020; font-weight:bold; }
+@media (max-width:700px){ .info-grid{grid-template-columns:1fr;} .sofa{left:28%; width:45%;} .window{left:25px;} .lamp{right:35px;} }

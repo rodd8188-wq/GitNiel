@@ -1,0 +1,325 @@
+const habitacion = document.getElementById('habitacion');
+const persiana = document.getElementById('persiana');
+const temperatura = document.getElementById('temperatura');
+const estadoVoz = document.getElementById('estadoVoz');
+const textoReconocido = document.getElementById('textoReconocido');
+const ultimaAccion = document.getElementById('ultimaAccion');
+const entradaManual = document.getElementById('entradaManual');
+
+let temp = 22;
+let luzEncendida = false;
+let persianaAbierta = true;
+let modoNoche = false;
+
+function normalizar(texto) {
+  return texto.toLowerCase().trim()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
+function informar(mensaje, error = false) {
+  ultimaAccion.textContent = mensaje;
+  ultimaAccion.classList.toggle('error', error);
+}
+
+const TEMP_INICIAL = 22;
+const TEMP_MIN = 16;
+const TEMP_MAX = 30;
+const TEMP_MODO_NOCHE = 20;
+
+const ELEMENTOS = {
+  luz: ['luz', 'luces', 'lampara', 'bombilla'],
+  persiana: ['persiana', 'persianas'],
+  temperatura: ['temperatura', 'grados', 'calefaccion']
+};
+
+const ACCIONES_LUZ = {
+  encender: ['encender', 'enciende', 'enciendela', 'enciendeme', 'prende', 'prender', 'pon', 'poner', 'activa', 'activar'],
+  apagar: ['apagar', 'apaga', 'apagala', 'apagame', 'quita', 'quitar', 'desactiva', 'desactivar']
+};
+
+const ACCIONES_PERSIANA = {
+  abrir: ['abrir', 'abre', 'abrela', 'abreme', 'sube', 'subir', 'levanta', 'levantar'],
+  cerrar: ['cerrar', 'cierra', 'cierrala', 'cierrame', 'baja', 'bajar', 'bajala']
+};
+
+const ACCIONES_TEMPERATURA = {
+  subir: ['subir', 'sube', 'aumentar', 'aumenta', 'incrementar', 'incrementa', 'calentar', 'calienta'],
+  bajar: ['bajar', 'baja', 'reducir', 'reduce', 'disminuir', 'disminuye', 'enfriar', 'enfria'],
+  establecer: ['poner', 'pon', 'pone', 'establecer', 'establece', 'fijar', 'fija',
+               'ajustar', 'ajusta', 'cambiar', 'cambia', 'programar', 'programa', 'dejar', 'deja']
+};
+
+const PALABRAS_REINICIAR = ['reiniciar', 'reinicia', 'resetear', 'resetea', 'restablecer', 'restablece'];
+const PALABRAS_DESACTIVAR = ['desactivar', 'desactiva', 'quitar', 'quita', 'salir', 'cancelar', 'cancela'];
+
+const MODOS = {
+  noche: ['noche', 'nocturno', 'dormir'],
+  lectura: ['lectura', 'leer']
+};
+
+const NUMEROS_TEXTO = {
+  un: 1, uno: 1, una: 1, dos: 2, tres: 3, cuatro: 4, cinco: 5, seis: 6, siete: 7, ocho: 8,
+  nueve: 9, diez: 10, once: 11, doce: 12, trece: 13, catorce: 14, quince: 15,
+  dieciseis: 16, diecisiete: 17, dieciocho: 18, diecinueve: 19, veinte: 20,
+  veintiuno: 21, veintiun: 21, veintidos: 22, veintitres: 23, veinticuatro: 24,
+  veinticinco: 25, veintiseis: 26, veintisiete: 27, veintiocho: 28, veintinueve: 29, treinta: 30
+};
+
+function obtenerPalabras(texto) {
+  return texto.split(/[^a-z0-9]+/).filter(Boolean);
+}
+
+function contieneAlguna(palabras, lista) {
+  return lista.some(p => palabras.includes(p));
+}
+
+function extraerNumero(texto, palabras) {
+  const coincidencia = texto.match(/\d+/);
+  if (coincidencia) return parseInt(coincidencia[0], 10);
+  for (const p of palabras) {
+    if (p in NUMEROS_TEXTO) return NUMEROS_TEXTO[p];
+  }
+  return null;
+}
+
+function actualizarVista() {
+  habitacion.classList.toggle('light-on', luzEncendida);
+  habitacion.classList.toggle('night', modoNoche);
+  persiana.classList.toggle('open', persianaAbierta);
+  persiana.classList.toggle('closed', !persianaAbierta);
+  temperatura.textContent = temp;
+}
+
+function salirDeModoNocheSiProcede() {
+  if (modoNoche) modoNoche = false;
+}
+
+function encenderLuz() {
+  if (luzEncendida) return informar('La luz ya está encendida.', true);
+  luzEncendida = true;
+  salirDeModoNocheSiProcede();
+  actualizarVista();
+  informar('Luz encendida');
+}
+
+function apagarLuz() {
+  if (!luzEncendida) return informar('La luz ya está apagada.', true);
+  luzEncendida = false;
+  actualizarVista();
+  informar('Luz apagada');
+}
+
+function abrirPersiana() {
+  if (persianaAbierta) return informar('La persiana ya está abierta.', true);
+  persianaAbierta = true;
+  salirDeModoNocheSiProcede();
+  actualizarVista();
+  informar('Persiana abierta');
+}
+
+function cerrarPersiana() {
+  if (!persianaAbierta) return informar('La persiana ya está cerrada.', true);
+  persianaAbierta = false;
+  actualizarVista();
+  informar('Persiana cerrada');
+}
+
+// Valida y aplica una temperatura. Devuelve true si se ha cambiado.
+function fijarTemperatura(nueva, mensajeOk) {
+  if (nueva < TEMP_MIN || nueva > TEMP_MAX) {
+    informar(`La temperatura debe estar entre ${TEMP_MIN} y ${TEMP_MAX} °C.`, true);
+    return false;
+  }
+  temp = nueva;
+  actualizarVista();
+  informar(mensajeOk || `Temperatura: ${temp} °C`);
+  return true;
+}
+
+function subirTemperatura(cantidad) {
+  fijarTemperatura(temp + cantidad, `Temperatura subida a ${temp + cantidad} °C`);
+}
+
+function bajarTemperatura(cantidad) {
+  fijarTemperatura(temp - cantidad, `Temperatura bajada a ${temp - cantidad} °C`);
+}
+
+function establecerTemperatura(valor) {
+  if (valor === temp && valor >= TEMP_MIN && valor <= TEMP_MAX) {
+    return informar(`La temperatura ya está a ${temp} °C.`, true);
+  }
+  fijarTemperatura(valor, `Temperatura establecida a ${valor} °C`);
+}
+
+function activarModoNoche() {
+  if (modoNoche) return informar('El modo noche ya está activado.', true);
+  luzEncendida = false;
+  persianaAbierta = false;
+  temp = TEMP_MODO_NOCHE;
+  modoNoche = true;
+  actualizarVista();
+  informar(`Modo noche activado: luz apagada, persiana cerrada y temperatura a ${TEMP_MODO_NOCHE} °C`);
+}
+
+function desactivarModoNoche() {
+  if (!modoNoche) return informar('El modo noche ya está desactivado.', true);
+  modoNoche = false;
+  actualizarVista();
+  informar('Modo noche desactivado');
+}
+
+//   1 Enciende la luz  2 Cierra la persiana  3 Pone la temperatura a 23 °C
+function activarModoLectura() {
+  luzEncendida = true;
+  persianaAbierta = false;
+  temp = 23;
+  modoNoche = false;
+  actualizarVista();
+  informar('Modo lectura activado: luz encendida, persiana cerrada y temperatura a 23 °C');
+}
+
+function reiniciarHabitacion() {
+  luzEncendida = false;
+  persianaAbierta = true;
+  temp = TEMP_INICIAL;
+  modoNoche = false;
+  actualizarVista();
+  informar('Habitación reiniciada: luz apagada, persiana abierta, 22 °C y modo noche desactivado');
+}
+
+function interpretarLuz(palabras) {
+  const quiereEncender = contieneAlguna(palabras, ACCIONES_LUZ.encender);
+  const quiereApagar = contieneAlguna(palabras, ACCIONES_LUZ.apagar);
+
+  if (quiereEncender && quiereApagar) informar('Orden ambigua: indica si quieres encender o apagar la luz.', true);
+  else if (quiereEncender) encenderLuz();
+  else if (quiereApagar) apagarLuz();
+  else informar('Falta información: ¿quieres encender o apagar la luz?', true);
+}
+
+function interpretarPersiana(palabras) {
+  const quiereAbrir = contieneAlguna(palabras, ACCIONES_PERSIANA.abrir);
+  const quiereCerrar = contieneAlguna(palabras, ACCIONES_PERSIANA.cerrar);
+
+  if (quiereAbrir && quiereCerrar) informar('Orden ambigua: indica si quieres abrir o cerrar la persiana.', true);
+  else if (quiereAbrir) abrirPersiana();
+  else if (quiereCerrar) cerrarPersiana();
+  else informar('Falta información: ¿quieres abrir o cerrar la persiana?', true);
+}
+
+function interpretarTemperatura(texto, palabras) {
+  const quiereSubir = contieneAlguna(palabras, ACCIONES_TEMPERATURA.subir);
+  const quiereBajar = contieneAlguna(palabras, ACCIONES_TEMPERATURA.bajar);
+  const valor = extraerNumero(texto, palabras);
+
+  if (quiereSubir && quiereBajar) {
+    return informar('Orden ambigua: indica si quieres subir o bajar la temperatura.', true);
+  }
+  if (valor === null) {
+    return informar('Falta información: indica cuántos grados (por ejemplo, "pon la temperatura a 24 grados").', true);
+  }
+
+  if (quiereSubir) subirTemperatura(valor);
+  else if (quiereBajar) bajarTemperatura(valor);
+  else establecerTemperatura(valor); // "pon la temperatura a 24" o "temperatura 24"
+}
+
+function interpretarModo(texto, palabras) {
+  const quiereDesactivar = contieneAlguna(palabras, PALABRAS_DESACTIVAR);
+  const modosDetectados = Object.keys(MODOS).filter(m => contieneAlguna(palabras, MODOS[m]));
+
+  if (modosDetectados.length === 0) {
+    return informar('Modo no reconocido. Modos disponibles: noche y lectura.', true);
+  }
+  if (modosDetectados.length > 1) {
+    return informar('Indica un solo modo cada vez.', true);
+  }
+
+  const modo = modosDetectados[0];
+  if (modo === 'noche') {
+    if (quiereDesactivar) desactivarModoNoche();
+    else activarModoNoche();
+  } else if (modo === 'lectura') {
+    if (quiereDesactivar) informar('El modo lectura no se desactiva: cambia la luz, la persiana o la temperatura.', true);
+    else activarModoLectura();
+  }
+}
+
+function ejecutarComando(textoOriginal) {
+  const texto = normalizar(textoOriginal);
+  textoReconocido.textContent = textoOriginal;
+
+  const palabras = obtenerPalabras(texto);
+
+  // Usa una estructura if / else if
+  if (palabras.length === 0) {
+    informar('No se ha recibido ningún comando.', true);
+  } else if (contieneAlguna(palabras, PALABRAS_REINICIAR)) {
+    reiniciarHabitacion();
+  } else if (palabras.includes('modo')) {
+    interpretarModo(texto, palabras);
+  } else {
+    // Qué elementos se mencionan en la orden
+    const mencionaLuz = contieneAlguna(palabras, ELEMENTOS.luz);
+    const mencionaPersiana = contieneAlguna(palabras, ELEMENTOS.persiana);
+    const mencionaTemperatura = contieneAlguna(palabras, ELEMENTOS.temperatura);
+    const totalElementos = [mencionaLuz, mencionaPersiana, mencionaTemperatura].filter(Boolean).length;
+
+    if (totalElementos > 1) {
+      informar('Indica una sola acción cada vez (luz, persiana o temperatura).', true);
+    } else if (mencionaLuz) {
+      interpretarLuz(palabras);
+    } else if (mencionaPersiana) {
+      interpretarPersiana(palabras);
+    } else if (mencionaTemperatura) {
+      interpretarTemperatura(texto, palabras);
+    } else {
+      informar('Comando no reconocido.', true);
+    }
+  }
+}
+
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+let recognition = null;
+
+if (SpeechRecognition) {
+  recognition = new SpeechRecognition();
+  recognition.lang = 'es-ES';
+  recognition.continuous = true;
+  recognition.interimResults = false;
+
+  recognition.onstart = () => {
+    estadoVoz.textContent = 'Escuchando';
+    estadoVoz.className = 'badge listening';
+  };
+
+  recognition.onend = () => {
+    estadoVoz.textContent = 'Detenido';
+    estadoVoz.className = 'badge stopped';
+  };
+
+  recognition.onresult = (event) => {
+    const ultimo = event.results[event.results.length - 1][0].transcript;
+    ejecutarComando(ultimo);
+  };
+
+  recognition.onerror = (event) => informar(`Error de voz: ${event.error}`, true);
+} else {
+  informar('Este navegador no ofrece reconocimiento de voz. Usa la prueba manual.', true);
+}
+
+document.getElementById('btnIniciar').addEventListener('click', () => {
+  if (recognition) recognition.start();
+});
+
+document.getElementById('btnDetener').addEventListener('click', () => {
+  if (recognition) recognition.stop();
+});
+
+document.getElementById('btnProbar').addEventListener('click', () => {
+  ejecutarComando(entradaManual.value);
+});
+
+entradaManual.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') ejecutarComando(entradaManual.value);
+});

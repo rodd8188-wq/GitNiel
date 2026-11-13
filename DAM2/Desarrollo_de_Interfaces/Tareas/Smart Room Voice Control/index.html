@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart Room Voice Control</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>Smart Room Voice Control</h1>
+      <p>Controla la habitación con tu voz</p>
+    </header>
+
+    <section class="status-panel">
+      <span id="estadoVoz" class="badge stopped">Detenido</span>
+      <button id="btnIniciar">Iniciar voz</button>
+      <button id="btnDetener">Detener</button>
+    </section>
+
+    <section id="habitacion" class="room">
+      <div id="ventana" class="window"><div id="persiana" class="blind open"></div></div>
+      <div id="lampara" class="lamp">💡</div>
+      <div class="thermostat"><span id="temperatura">22</span> °C</div>
+      <div class="sofa">SOFÁ</div>
+    </section>
+
+    <section class="info-grid">
+      <article>
+        <h2>He entendido</h2>
+        <p id="textoReconocido">—</p>
+      </article>
+      <article>
+        <h2>Última acción</h2>
+        <p id="ultimaAccion">Ninguna</p>
+      </article>
+    </section>
+
+    <section class="manual-test">
+      <h2>Prueba manual</h2>
+      <p>Úsala si el reconocimiento de voz no está disponible en este equipo.</p>
+      <input id="entradaManual" type="text" placeholder="Escribe un comando">
+      <button id="btnProbar">Probar comando</button>
+    </section>
+    
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
