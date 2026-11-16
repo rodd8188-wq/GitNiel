@@ -6,8 +6,7 @@ public class Barca extends Thread{
 	
 	private int 
 		id,
-		max = 15,
-		naufragos = 0;
+		naufragosTotal = 0;
 	
 	public Barca() {
 		numBarcas++;
@@ -16,7 +15,8 @@ public class Barca extends Thread{
 	
 	@Override
 	public void run() {
-		
+		System.out.println("La barca actual es la " + this.id);
+		isla.rescate();
 	}
 	
 	
