@@ -90,7 +90,8 @@ public class ApPrinc {
 			Process procesoProc = lanzar("../SubApProcFT/bin", "procft.SubApProcFT");
 			
 			// Ruta, nombre, transferencias, hilos
-			String[] datosProc = null;
+			/// Esta linea ---------------------------------------------------
+			String[] datosProc = new String[4];
 				datosProc[0] = ruta;
 				datosProc[1] = nombre;
 				datosProc[2] = "" + numTransferencias;
@@ -109,7 +110,9 @@ public class ApPrinc {
 			// Lanzamos el proceso de generar el fichero
 			Process procesoGen = lanzar("../SubApGenFT/bin", "genft.SubApGenFT");
 			
-			String[] datosGen = null;
+			// Ruta, nombre, transferencias, hilos
+			/// Esta linea ---------------------------------------------------
+			String[] datosGen = new String[4];
 				datosProc[0] = ruta;
 				datosProc[1] = nombre;
 				datosProc[2] = "" + numTransferencias;
