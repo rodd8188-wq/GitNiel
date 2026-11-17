@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><module codename="org.graalvm.visualvm.modules.killapp/1">
+    <module_version install_time="1788160874236" last="true" origin="installer" specification_version="1.2">
+        <file crc="2784721145" name="config/Modules/org-graalvm-visualvm-modules-killapp.xml"/>
+        <file crc="3982496913" name="modules/org-graalvm-visualvm-modules-killapp.jar"/>
+    </module_version>
+</module>

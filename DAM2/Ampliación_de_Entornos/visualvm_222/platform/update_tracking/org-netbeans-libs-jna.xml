@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><module codename="org.netbeans.libs.jna/2">
+    <module_version install_time="1788160815306" last="true" origin="installer" specification_version="2.19">
+        <file crc="1637808577" name="config/Modules/org-netbeans-libs-jna.xml"/>
+        <file crc="3440557370" name="modules/ext/jna-5.14.0.jar"/>
+        <file crc="699592960" name="modules/lib/aarch64/jnidispatch-nb.dll"/>
+        <file crc="2242303524" name="modules/lib/aarch64/libjnidispatch-nb.jnilib"/>
+        <file crc="4279969283" name="modules/lib/aarch64/linux/libjnidispatch-nb.so"/>
+        <file crc="2566066050" name="modules/lib/amd64/jnidispatch-nb.dll"/>
+        <file crc="4012999396" name="modules/lib/amd64/linux/libjnidispatch-nb.so"/>
+        <file crc="1438290663" name="modules/lib/i386/linux/libjnidispatch-nb.so"/>
+        <file crc="235281730" name="modules/lib/riscv64/linux/libjnidispatch-nb.so"/>
+        <file crc="1114297448" name="modules/lib/x86/jnidispatch-nb.dll"/>
+        <file crc="2005309383" name="modules/lib/x86_64/libjnidispatch-nb.jnilib"/>
+        <file crc="372033291" name="modules/org-netbeans-libs-jna.jar"/>
+    </module_version>
+</module>

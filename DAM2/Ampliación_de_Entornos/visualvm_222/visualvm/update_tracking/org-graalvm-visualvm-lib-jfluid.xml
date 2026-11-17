@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><module codename="org.graalvm.visualvm.lib.jfluid/2">
+    <module_version install_time="1788160872848" last="true" origin="installer" specification_version="2.21">
+        <file crc="1411601489" name="config/Modules/org-graalvm-visualvm-lib-jfluid.xml"/>
+        <file crc="1154872309" name="lib/deployed/jdk15/linux-amd64/libprofilerinterface.so"/>
+        <file crc="2939887110" name="lib/deployed/jdk15/linux/libprofilerinterface.so"/>
+        <file crc="2622795441" name="lib/deployed/jdk15/mac/libprofilerinterface.jnilib"/>
+        <file crc="2597929166" name="lib/deployed/jdk15/solaris-amd64/libprofilerinterface.so"/>
+        <file crc="4105350812" name="lib/deployed/jdk15/solaris-i386/libprofilerinterface.so"/>
+        <file crc="553305875" name="lib/deployed/jdk15/solaris-sparc/libprofilerinterface.so"/>
+        <file crc="4107287957" name="lib/deployed/jdk15/solaris-sparcv9/libprofilerinterface.so"/>
+        <file crc="2845547978" name="lib/deployed/jdk15/windows-amd64/profilerinterface.dll"/>
+        <file crc="1232390341" name="lib/deployed/jdk15/windows-amd64/profilerinterface.map"/>
+        <file crc="1694767667" name="lib/deployed/jdk15/windows/profilerinterface.dll"/>
+        <file crc="1148437407" name="lib/deployed/jdk15/windows/profilerinterface.map"/>
+        <file crc="897390746" name="lib/deployed/jdk16/linux-aarch64/libprofilerinterface.so"/>
+        <file crc="2667000359" name="lib/deployed/jdk16/linux-amd64/libprofilerinterface.so"/>
+        <file crc="1616049472" name="lib/deployed/jdk16/linux-arm-vfp-hflt/libprofilerinterface.so"/>
+        <file crc="2059441670" name="lib/deployed/jdk16/linux-arm/libprofilerinterface.so"/>
+        <file crc="3593112720" name="lib/deployed/jdk16/linux/libprofilerinterface.so"/>
+        <file crc="3944274088" name="lib/deployed/jdk16/mac/libprofilerinterface.jnilib"/>
+        <file crc="2563385685" name="lib/deployed/jdk16/solaris-amd64/libprofilerinterface.so"/>
+        <file crc="257752206" name="lib/deployed/jdk16/solaris-i386/libprofilerinterface.so"/>
+        <file crc="2479696835" name="lib/deployed/jdk16/solaris-sparc/libprofilerinterface.so"/>
+        <file crc="1915358297" name="lib/deployed/jdk16/solaris-sparcv9/libprofilerinterface.so"/>
+        <file crc="3792883587" name="lib/deployed/jdk16/windows-amd64/profilerinterface.dll"/>
+        <file crc="3643188847" name="lib/deployed/jdk16/windows-amd64/profilerinterface.map"/>
+        <file crc="3897481858" name="lib/deployed/jdk16/windows/profilerinterface.dll"/>
+        <file crc="999179143" name="lib/deployed/jdk16/windows/profilerinterface.map"/>
+        <file crc="2839773877" name="lib/jfluid-server-15.jar"/>
+        <file crc="2775485493" name="lib/jfluid-server.jar"/>
+        <file crc="1191267497" name="modules/org-graalvm-visualvm-lib-jfluid.jar"/>
+    </module_version>
+</module>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><module codename="org.graalvm.visualvm.nashorn.jdk15">
+    <module_version install_time="1788160873587" last="true" origin="installer" specification_version="1.2">
+        <file crc="2032863731" name="config/Modules/org-graalvm-visualvm-nashorn-jdk15.xml"/>
+        <file crc="2136774357" name="modules/ext/asm-util-9.7.jar"/>
+        <file crc="569067637" name="modules/ext/nashorn-core-15.6.jar"/>
+        <file crc="2371038117" name="modules/org-graalvm-visualvm-nashorn-jdk15.jar"/>
+    </module_version>
+</module>
