@@ -1,0 +1,6 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.Calculaniel" parent="Theme.Material3.DayNight.NoActionBar">
+    </style>
+
+    <style name="Theme.Calculaniel" parent="Base.Theme.Calculaniel" />
+</resources>

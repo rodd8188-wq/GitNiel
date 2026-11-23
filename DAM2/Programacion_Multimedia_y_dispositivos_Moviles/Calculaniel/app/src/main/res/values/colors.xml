@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Colores basicos-->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Fondo -->
+    <color name="calc_background">#FFF5EBDC</color>
+
+    <!-- Textos de las pantallas -->
+    <color name="display_main_text">#FF502314</color>      <!-- marrón barbacoa -->
+    <color name="display_secondary_text">#FF9C7B68</color> <!-- marrón atenuado -->
+
+    <!-- Botones numericos-->
+    <color name="button_number_bg">#FF502314</color>
+    <color name="button_number_text">#FFF5EBDC</color>
+
+    <!-- Botones de operadores -->
+    <color name="button_operator_bg">#FFD62300</color>
+    <color name="button_operator_text">#FFFFFFFF</color>
+
+    <!-- Botones especiales -->
+    <color name="button_special_bg">#FFFF8732</color>
+    <color name="button_special_text">#FF502314</color>
+
+    <!-- Botón igual -->
+    <color name="button_equals_bg">#FFFFB81C</color>
+    <color name="button_equals_text">#FF502314</color>
+</resources>
