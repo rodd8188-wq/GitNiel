@@ -4,40 +4,61 @@ import java.util.concurrent.Semaphore;
 
 public class Isla {
 	
-	private int naufragos = (int)(Math.random()*(1000-800+1))+800;
+	private final int MAX_NAUFRAGOS = 100;
+	private final int MIN_NAUFRAGOS = 80;
 	
-	private Semaphore semaforo;
+	private int numNaufragos = (int)(Math.random()*(MAX_NAUFRAGOS-MIN_NAUFRAGOS+1))+MIN_NAUFRAGOS;
 	
-	public Isla(Semaphore semaforo) {
-		this.semaforo = semaforo;
+	private Semaphore semaforo = new Semaphore(2);
+	
+	public Isla() {
+		
 	}
 	
-	public int getNaufragos() {
-		return this.naufragos;
+	public Semaphore getSemaforo() {
+		return this.semaforo;
 	}
 	
-	public void rescate(String nombre) throws InterruptedException{
+	public int getNumNaufragos() {
+		return this.numNaufragos;
+	}
+	
+	public int rescatarNaufragos(int idBarca) {
 		
-		System.out.println("Entra la barca " + nombre);
+		int rescatados = 0;
 		
-		try {
-			
-			this.semaforo.acquire();
-			synchronized (this) {
-				
-				if(this.naufragos > 15) {
-					
-				} else if (this.naufragos <15) {
-					
-				} else {
-					
-				}
-				
-			}
-			
-		} catch (Exception e) {
-			
-		}
+        try {
+            
+            if(numNaufragos >= 15) {
+            	rescatados = 15;
+            	numNaufragos -= 15;
+            } else if(numNaufragos < 15) {
+            	rescatados = numNaufragos;
+            	numNaufragos = 0;
+            }
+            
+            System.out.println("La balsa actual es Balsa " + idBarca + " y rescatamos a " + rescatados);
+            System.out.println("\nQuedan " + numNaufragos + " náufragos");
+
+            Thread.sleep(randomNum(2000, 3000));
+            
+            
+
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        } finally {
+            semaforo.release();
+        }
+        
+        return rescatados;
+    }
+	
+	public int randomNum(int min, int max) {
+		return (int)(Math.random()*(max-min+1))+min;
+	}
+	
+	public void acquireSemaforo() throws InterruptedException{
+		semaforo.acquire();
 	}
 	
 }
